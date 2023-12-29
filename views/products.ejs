@@ -1,0 +1,38 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+	td, th, table{
+		border: 1px solid black;
+	}
+</style>
+<body>
+  <h1><%= title %></h1>
+  <table>
+	<tr>
+		<th>Product ID</th>
+		<th>Description</th>
+		<th>Store ID</th>
+		<th>Location</th>
+		<th>Price</th>
+		<th></th>
+	</tr>
+	<% products.forEach(product => { %>
+	<tr>
+		<td><%= product.pid %></td>
+		<td><%= product.productdesc %></td>
+		<td><%= product.sid %></td>
+		<td><%= product.location %></td>
+		<td><%= product.price %></td>
+		<td><a href="/products/delete/<%= product.pid %>">Delete <%= product.productdesc %></a></td>
+	</tr>
+    <% }); %>
+  </table>
+  <a href="/">Home</a>
+</body>
+</html>

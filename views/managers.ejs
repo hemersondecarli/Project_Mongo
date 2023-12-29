@@ -1,0 +1,34 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+	td, th, table{
+		border: 1px solid black;
+	}
+</style>
+<body>
+  <h1><%= title %></h1>
+  <a href="/managers/add">Add Manager(MongoDB)</a>
+  <table>
+	<tr>
+		<th>Manager ID</th>
+		<th>Name</th>
+		<th>Salary ID</th>
+	</tr>
+	<% results %>
+	<% results.forEach(doc => { %>
+	<tr>
+		<td><%= doc._id %></td>
+		<td><%= doc.name %></td>
+		<td><%= doc.salary %></td>
+	</tr>
+    <% }); %>
+  </table>
+  <a href="/">Home</a>
+</body>
+</html>

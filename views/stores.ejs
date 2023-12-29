@@ -1,0 +1,35 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+	td, th, table{
+		border: 1px solid black;
+	}
+</style>
+<body>
+  <h1><%= title %></h1>
+  <a href="/addStore">Add Store</a>
+  <table>
+	<tr>
+		<th>SID</th>
+		<th>Location</th>
+		<th>Manager ID</th>
+		<th>Action</th>
+	</tr>
+	<% stores.forEach(store => { %>
+	<tr>
+		<td><%= store.sid %></td>
+		<td><%= store.location %></td>
+		<td><%= store.mgrid %></td>
+		<td><a href="/stores/edit/<%= store.sid %>">Add</a></td>
+	</tr>
+    <% }); %>
+  </table>
+  <a href="/">Home</a>
+</body>
+</html>

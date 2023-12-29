@@ -1,0 +1,37 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+	td, th, table{
+		border: 1px solid black;
+	}
+</style>
+<body>
+  <h1><%= title %></h1>
+  
+	<% if (error && error.length > 0) { %>
+		<ul>
+			<li>
+				<%= error %>
+			</li>
+		</ul>
+	<% } %>
+	
+  <form action="/stores/edit/<%= store.sid %>" method="post">
+   
+   <label for="sid">SID:</label> <input type="text" value="<%= store.sid %>"disabled><br>
+   <input type="hidden" id="sid" name="sid" value="<%= store.sid %>">
+   <label for="location">Location:</label> <input type="text" id="location" name="location" value="<%= store.location %>"><br>
+   <label for="mgrid">Manager ID:</label> <input type="text" id="mgrid" name="mgrid" value="<%= store.mgrid %>"><br>
+
+    <button type="submit">Add</button>
+  </form>
+   
+  <a href="/">Home</a>
+</body>
+</html>

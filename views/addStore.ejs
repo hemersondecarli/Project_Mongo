@@ -1,0 +1,35 @@
+<!-- addStore.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+
+  <h1><%= title %></h1>
+
+  <!-- Add this block to display an error message -->
+  <% if (error) { %>
+      <p style="color: red;"><%= error %></p>
+  <% } %>
+  <form id="addStoreForm" action="/addStore" method="post">
+    <label for="sid">Store ID:</label>
+    <input type="text" id="sid" name="sid" value="<%= store.sid %>" required><br>
+
+    <label for="location">Store Location:</label>
+    <input type="text" id="location" name="location" value="<%= store.location %>" required><br>
+
+    <label for="mgrid">Manager ID:</label>
+    <input type="text" id="mgrid" name="mgrid" value="<%= store.mgrid %>" required><br>
+
+    <button type="submit">Add Store</button>
+  </form>
+
+  <br>
+  <a href="/">Home</a>
+
+</body>
+</html>
